@@ -5,8 +5,12 @@ describe("fizzbuzz", () => {
   it("should throw an error if the parameter value is greater than 100", () => {
     expect(() => {
       fizzbuzz(101);
-    }).toThrow("The input must be a number less than 100");
+    }).toThrow(
+      "The parameter was greater than 100. The parameter value must be a number less than 100."
+    );
   });
+
+  // it should throw an error if the parameter value is 0
 
   // it should throw an error if the parameter value is less than 1
 
