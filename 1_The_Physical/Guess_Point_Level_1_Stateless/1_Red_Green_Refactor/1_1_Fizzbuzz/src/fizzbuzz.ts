@@ -8,6 +8,8 @@ const fizzbuzz = (number: number) => {
     throw new Error(
       "The parameter value was less than 1. The parameter value must be a number between 1 and 100."
     );
+
+  if (number % 3 === 0) return "fizz";
 };
 
 export { fizzbuzz };
