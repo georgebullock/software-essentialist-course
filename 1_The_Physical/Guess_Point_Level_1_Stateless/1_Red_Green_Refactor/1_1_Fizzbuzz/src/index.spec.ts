@@ -34,6 +34,20 @@ describe("fizzbuzz", () => {
   });
 
   // it should return buzz for multiples of 5
+  it("should return buzz for multiples of 5", () => {
+    expect(fizzbuzz(5)).toBe("Buzz");
+    expect(fizzbuzz(10)).toBe("Buzz");
+    expect(fizzbuzz(20)).toBe("Buzz");
+    expect(fizzbuzz(25)).toBe("Buzz");
+  });
 
   // it should return fizzBuzz for multiples of 3 and 5
+  it("should return fizzBuzz for multiples of 5", () => {
+    expect(fizzbuzz(15)).toBe("fizzBuzz");
+    expect(fizzbuzz(30)).toBe("fizzBuzz");
+    expect(fizzbuzz(45)).toBe("fizzBuzz");
+    expect(fizzbuzz(60)).toBe("fizzBuzz");
+    expect(fizzbuzz(75)).toBe("fizzBuzz");
+    expect(fizzbuzz(90)).toBe("fizzBuzz");
+  });
 });

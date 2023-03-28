@@ -9,7 +9,11 @@ const fizzbuzz = (number: number) => {
       "The parameter value was less than 1. The parameter value must be a number between 1 and 100."
     );
 
+  if (number % 5 === 0 && number % 3 === 0) return "fizzBuzz";
+
   if (number % 3 === 0) return "fizz";
+
+  if (number % 5 === 0) return "Buzz";
 };
 
 export { fizzbuzz };
