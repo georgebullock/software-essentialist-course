@@ -1,6 +1,18 @@
 import { describe, expect, it } from "@jest/globals";
 import { fizzbuzz } from "./fizzbuzz";
 
+const nonMultiplesOfThreeAndFive = [
+  { value: 1, expected: "1" },
+  { value: 2, expected: "2" },
+  { value: 4, expected: "4" },
+  { value: 8, expected: "8" },
+  { value: 19, expected: "19" },
+  { value: 26, expected: "26" },
+  { value: 43, expected: "43" },
+  { value: 62, expected: "62" },
+  { value: 97, expected: "97" },
+];
+
 const multiplesOfThree = [
   { value: 3, expected: "fizz" },
   { value: 6, expected: "fizz" },
@@ -45,6 +57,7 @@ const multiplesOfFive = [
   { value: 80, expected: "Buzz" },
   { value: 85, expected: "Buzz" },
   { value: 95, expected: "Buzz" },
+  { value: 100, expected: "Buzz" },
 ];
 
 const multiplesOfThreeAndFive = [
@@ -57,9 +70,9 @@ const multiplesOfThreeAndFive = [
 ];
 
 describe("fizzbuzz", () => {
-  it("should throw an error if the parameter value is greater than 100", () => {
+  it("should throw an error if the parameter value is less than 0", () => {
     expect(() => {
-      fizzbuzz(101);
+      fizzbuzz(-1);
     }).toThrow();
   });
 
@@ -69,11 +82,18 @@ describe("fizzbuzz", () => {
     }).toThrow();
   });
 
-  it("should throw an error if the parameter value is less than 0", () => {
+  it("should throw an error if the parameter value is greater than 100", () => {
     expect(() => {
-      fizzbuzz(-1);
+      fizzbuzz(101);
     }).toThrow();
   });
+
+  it.each(nonMultiplesOfThreeAndFive)(
+    "should return the number as a string for non multiples of 3 and 5",
+    (table) => {
+      expect(fizzbuzz(table.value)).toEqual(table.expected);
+    }
+  );
 
   it.each(multiplesOfThree)(
     "should return fizz for multiples of 3",
