@@ -1,6 +1,6 @@
 const isPalindrome = (value: string) => {
   // Normalize the input value
-  const normalizedValue = value.toLowerCase();
+  const normalizedValue = value.split(" ").join("").toLowerCase();
 
   // Reverse the value
   const reversedValue = normalizedValue.split("").reverse().join("");

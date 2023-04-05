@@ -7,6 +7,8 @@ const palindromes = [
   { value: "ciVic" },
   { value: "radAR" },
   { value: "LeveL" },
+  { value: "Was It A Rat I Saw" },
+  { value: "Never Odd or Even" },
 ];
 
 const nonPalindromes = [
@@ -15,6 +17,8 @@ const nonPalindromes = [
   { value: "Hanover" },
   { value: "Potsdam" },
   { value: "Frankfurt" },
+  { value: "A View to a Kill" },
+  { value: "From Russia With Love" },
 ];
 
 describe("palindrome checker", () => {
