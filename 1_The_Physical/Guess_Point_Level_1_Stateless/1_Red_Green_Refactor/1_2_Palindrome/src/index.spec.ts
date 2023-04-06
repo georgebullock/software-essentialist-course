@@ -21,6 +21,16 @@ const nonPalindromes = [
   { value: "From Russia With Love" },
 ];
 
+const nonStringTypes = [
+  { value: undefined },
+  { value: null },
+  { value: true },
+  { value: false },
+  { value: Symbol("foo") },
+  { value: {} },
+  { value: () => {} },
+];
+
 describe("palindrome checker", () => {
   it.each(palindromes)(
     "should return true when the parameter value is a palindrome",
@@ -35,4 +45,12 @@ describe("palindrome checker", () => {
       expect(isPalindrome(table.value)).toBe(false);
     }
   );
+
+  it("should throw an error if the parameter value is not a string", () => {
+    (table: any) => {
+      expect(isPalindrome(table.value)).toBe(
+        `Problem: The argument is a ${typeof table.value}. isPalindrome only accepts string arguments. Solution: Change the argument to a string.`
+      );
+    };
+  });
 });
