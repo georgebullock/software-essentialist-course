@@ -9,6 +9,10 @@ const palindromes = [
   { value: "LeveL" },
   { value: "Was It A Rat I Saw" },
   { value: "Never Odd or Even" },
+  { value: "Mom" },
+  { value: "MoM" },
+  { value: "xMomx" },
+  { value: "1Never Odd or Even1" },
 ];
 
 const nonPalindromes = [
@@ -19,6 +23,8 @@ const nonPalindromes = [
   { value: "Frankfurt" },
   { value: "A View to a Kill" },
   { value: "From Russia With Love" },
+  { value: "Momx" },
+  { value: "Never Odd or Even1" },
 ];
 
 const nonStringTypes = [
